@@ -1,0 +1,74 @@
+unit FDOCUMENTO;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Menus, DB, MemDS,
+  DBAccess, Ora, Grids, DBGrids, StdCtrls, DBCtrls, Buttons, DBSBtncx,
+  cxButtons, Mask, ExtCtrls;
+
+type
+  TfrmDocumentos = class(TForm)
+    Panel1: TPanel;
+    Label2: TLabel;
+    Label1: TLabel;
+    edNome: TDBEdit;
+    PEdicao: TPanel;
+    sbRefresh: TcxButton;
+    dbsbInsert: TDBcxSpeedButton;
+    dbsbDelete: TDBcxSpeedButton;
+    dbsbEdit: TDBcxSpeedButton;
+    dbsbPost: TDBcxSpeedButton;
+    dbsbCancel: TDBcxSpeedButton;
+    DBEdit2: TDBEdit;
+    btnPdf: TSpeedButton;
+    btnVerPdf: TSpeedButton;
+    Label3: TLabel;
+    mDuvida: TDBMemo;
+    Label4: TLabel;
+    pGrid: TPanel;
+    gProcesso: TDBGrid;
+    dsDocumento: TOraDataSource;
+    qryDocumento: TOraQuery;
+    qryDocumentoCOD_DOCUMENTO: TFloatField;
+    qryDocumentoNOME_DOCUMENTO: TStringField;
+    qryDocumentoDESCRICAO: TStringField;
+    qryDocumentoDOCUMENTO: TBlobField;
+    qryDocumentoPALAVRA_CHAVE: TStringField;
+    qryDocumentoPALAVRA_CHAVE2: TStringField;
+    qryDocumentoPALAVRA_CHAVE3: TStringField;
+    Label6: TLabel;
+    edChave: TDBEdit;
+    edChave2: TDBEdit;
+    edChave3: TDBEdit;
+    procedure FormShow(Sender: TObject);
+    procedure dsDocumentoStateChange(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmDocumentos: TfrmDocumentos;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmDocumentos.dsDocumentoStateChange(Sender: TObject);
+begin
+  edNome.ReadOnly   := dsDocumento.State = dsBrowse;
+  mDuvida.ReadOnly  := dsDocumento.State = dsBrowse;
+  edChave.ReadOnly  := dsDocumento.State = dsBrowse;
+  edChave2.ReadOnly := dsDocumento.State = dsBrowse;
+  edChave3.ReadOnly := dsDocumento.State = dsBrowse;
+end;
+
+procedure TfrmDocumentos.FormShow(Sender: TObject);
+begin
+  qryDocumento.Open;
+end;
+
+end.

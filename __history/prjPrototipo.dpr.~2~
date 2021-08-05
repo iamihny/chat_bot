@@ -1,0 +1,14 @@
+program prjPrototipo;
+
+uses
+  Forms,
+  frmPrototipo in 'frmPrototipo.pas' {frmChatBot};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmChatBot, frmChatBot);
+  Application.Run;
+end.

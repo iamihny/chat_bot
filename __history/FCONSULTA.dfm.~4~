@@ -1,0 +1,177 @@
+object frmConsulta: TfrmConsulta
+  Left = 0
+  Top = 0
+  Caption = 'Consulta Solu'#231#245'es'
+  ClientHeight = 337
+  ClientWidth = 546
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxGrid1: TcxGrid
+    Left = 0
+    Top = 0
+    Width = 546
+    Height = 337
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 80
+    ExplicitTop = 64
+    ExplicitWidth = 250
+    ExplicitHeight = 200
+    object cxGrid1DBTableView1: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <>
+      DataController.DataSource = dsProcesso
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      OptionsView.GroupByBox = False
+      object cxGrid1DBTableView1COD_PROCESSO: TcxGridDBColumn
+        Caption = 'C'#243'd. Processo'
+        DataBinding.FieldName = 'COD_PROCESSO'
+        HeaderAlignmentHorz = taCenter
+        Width = 99
+      end
+      object cxGrid1DBTableView1PROCESSO: TcxGridDBColumn
+        Caption = 'Processo'
+        DataBinding.FieldName = 'PROCESSO'
+        HeaderAlignmentHorz = taCenter
+      end
+    end
+    object cxGrid1DBTableView2: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <>
+      DataController.DataSource = dsAssunto
+      DataController.DetailKeyFieldNames = 'COD_PROCESSO'
+      DataController.KeyFieldNames = 'COD_ASSUNTO'
+      DataController.MasterKeyFieldNames = 'COD_PROCESSO'
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      OptionsView.GroupByBox = False
+      object cxGrid1DBTableView2ASSUNTO: TcxGridDBColumn
+        DataBinding.FieldName = 'ASSUNTO'
+      end
+    end
+    object cxGrid1DBTableView3: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <>
+      DataController.DataSource = dsSolucoes
+      DataController.DetailKeyFieldNames = 'COD_ASSUNTO'
+      DataController.KeyFieldNames = 'COD_SOLUCAO'
+      DataController.MasterKeyFieldNames = 'COD_ASSUNTO'
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      OptionsView.GroupByBox = False
+      object cxGrid1DBTableView3DUVIDA: TcxGridDBColumn
+        DataBinding.FieldName = 'DUVIDA'
+      end
+      object cxGrid1DBTableView3SOLUCAO: TcxGridDBColumn
+        DataBinding.FieldName = 'SOLUCAO'
+      end
+    end
+    object cxGrid1Level1: TcxGridLevel
+      GridView = cxGrid1DBTableView1
+      object cxGrid1Level2: TcxGridLevel
+        GridView = cxGrid1DBTableView2
+        object cxGrid1Level3: TcxGridLevel
+          GridView = cxGrid1DBTableView3
+        end
+      end
+    end
+  end
+  object qryProcesso: TOraQuery
+    SQL.Strings = (
+      'SELECT *'
+      '  FROM CHAT0100'
+      ' ORDER BY ORDEM')
+    Left = 264
+    Top = 176
+    object qryProcessoCOD_PROCESSO: TFloatField
+      FieldName = 'COD_PROCESSO'
+      Required = True
+    end
+    object qryProcessoPROCESSO: TStringField
+      FieldName = 'PROCESSO'
+      Required = True
+      Size = 50
+    end
+    object qryProcessoORDEM: TFloatField
+      FieldName = 'ORDEM'
+    end
+  end
+  object dsProcesso: TOraDataSource
+    DataSet = qryProcesso
+    Left = 256
+    Top = 192
+  end
+  object qryAssunto: TOraQuery
+    SQL.Strings = (
+      'SELECT * '
+      '  FROM CHAT0200')
+    Left = 104
+    Top = 112
+    object qryAssuntoCOD_PROCESSO: TFloatField
+      FieldName = 'COD_PROCESSO'
+      Required = True
+    end
+    object qryAssuntoCOD_ASSUNTO: TFloatField
+      FieldName = 'COD_ASSUNTO'
+      Required = True
+    end
+    object qryAssuntoASSUNTO: TStringField
+      FieldName = 'ASSUNTO'
+      Required = True
+      Size = 50
+    end
+    object qryAssuntoORDEM: TFloatField
+      FieldName = 'ORDEM'
+    end
+  end
+  object dsAssunto: TOraDataSource
+    DataSet = qryAssunto
+    Left = 96
+    Top = 136
+  end
+  object qrySolucoes: TOraQuery
+    SQL.Strings = (
+      'SELECT * '
+      'FROM CHAT0300')
+    Left = 312
+    Top = 80
+    object qrySolucoesCOD_PROCESSO: TFloatField
+      FieldName = 'COD_PROCESSO'
+      Required = True
+    end
+    object qrySolucoesCOD_ASSUNTO: TFloatField
+      FieldName = 'COD_ASSUNTO'
+      Required = True
+    end
+    object qrySolucoesCOD_SOLUCAO: TFloatField
+      FieldName = 'COD_SOLUCAO'
+      Required = True
+    end
+    object qrySolucoesDUVIDA: TStringField
+      FieldName = 'DUVIDA'
+      Required = True
+      Size = 500
+    end
+    object qrySolucoesSOLUCAO: TStringField
+      FieldName = 'SOLUCAO'
+      Size = 500
+    end
+    object qrySolucoesORDEM: TFloatField
+      FieldName = 'ORDEM'
+    end
+  end
+  object dsSolucoes: TOraDataSource
+    DataSet = qrySolucoes
+    Left = 368
+    Top = 120
+  end
+end

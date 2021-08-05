@@ -1,0 +1,150 @@
+object frmChatBot: TfrmChatBot
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'ChatBot'
+  ClientHeight = 367
+  ClientWidth = 419
+  Color = clGradientInactiveCaption
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object btnEnviar: TButton
+    Left = 296
+    Top = 301
+    Width = 97
+    Height = 50
+    Caption = 'Enviar'
+    Default = True
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 0
+    OnClick = btnEnviarClick
+  end
+  object Memo1: TMemo
+    Left = 24
+    Top = 302
+    Width = 266
+    Height = 49
+    Color = clHighlightText
+    TabOrder = 1
+    OnKeyPress = Memo1KeyPress
+  end
+  object Memo2: TMemo
+    Left = 24
+    Top = 8
+    Width = 369
+    Height = 281
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Courier New'
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 2
+  end
+  object IdHTTP1: TIdHTTP
+    AllowCookies = True
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.Accept = 'text/html, */*'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    HTTPOptions = [hoForceEncodeParams]
+    Left = 360
+    Top = 24
+  end
+  object xml: TXMLDocument
+    XML.Strings = (
+      '<chatbot>'
+      #9'<modulo>'
+      #9#9'<nome>Gerenciamento B'#225'sico</nome>'
+      #9#9'<listaAssuntos>'
+      #9#9#9'<assunto>'
+      #9#9#9'   <desc>Administra'#231#227'o de Contratos</desc>'
+      #9#9#9'   <informacoes>'
+      #9#9#9#9' <info>'
+      #9#9#9#9#9'<duvida>Como Cadastrar um novo Contrato ?</duvida>'
+      
+        #9#9#9#9#9'<solucao>No Menu GERENCIAMENTO B'#193'SICO DE RH no 4'#176' menu ADMI' +
+        'NISTRA'#199#195'O DE CONTRATOS selecione a tela ASSISTENTE DE CADASTRAME' +
+        'NTO</solucao>'
+      #9#9#9#9' </info>'
+      #9#9#9#9' <info>'
+      #9#9#9#9#9'<duvida>Como Cadastrar um novo Cargo ?</duvida>'
+      
+        #9#9#9#9#9'<solucao>No Menu GERENCIAMENTO B'#193'SICO DE RH no 3'#176' menu PAR'#194 +
+        'METROS DE CONTRATA'#199#195'O selecione o menu CARGO e depois MANUTEN'#199#195'O' +
+        ' DE CARGOS</solucao>'#9
+      #9#9#9#9' </info>'
+      #9#9#9'   </informacoes>'
+      #9#9#9'</assunto>'
+      #9#9#9'<assunto>'
+      #9#9#9'   <desc>Par'#226'metros de Contrata'#231#227'o</desc>'
+      #9#9#9'   <informacoes>'
+      #9#9#9#9' <info>'
+      #9#9#9#9'   <duvida>Como Cadastrar um novo Organograma ?</duvida>'
+      
+        #9#9#9#9'   <solucao>No Menu GERENCIAMENTO B'#193'SICO DE RH no 3'#176' menu PA' +
+        'R'#194'METROS DE CONTRATA'#199#195'O selecione o menu ORGANOGRAMA e depois MA' +
+        'NUTEN'#199#195'O DO ORGANOGRAMA</solucao>'#9
+      #9#9#9#9' </info>'
+      #9#9#9'   </informacoes>'#9#9'   '
+      #9#9#9'</assunto>'
+      #9#9'</listaAssuntos>'
+      #9'</modulo>'
+      #9'<modulo>'
+      #9#9' <nome>Cargos e Sal'#225'rios</nome>'
+      #9#9' <listaAssuntos>'#9' '
+      #9#9#9' <assunto>'
+      #9#9#9#9'<desc>Sal'#225'rios do Cargo</desc>'
+      #9#9#9#9'<informacoes>'
+      #9#9#9#9'  <info>'
+      #9#9#9#9'    <duvida>Como Cadastrar um novo Cargo ?</duvida>'
+      
+        '    '#9#9#9'    <solucao>No Menu GERENCIAMENTO B'#193'SICO DE RH no 3'#176' men' +
+        'u PAR'#194'METROS DE CONTRATA'#199#195'O selecione o menu CARGO e depois MANU' +
+        'TEN'#199#195'O DE CARGOS</solucao>'#9
+      #9#9#9#9'  </info>'
+      #9#9#9#9'</informacoes>'#9#9#9
+      #9#9#9' </assunto>'
+      #9#9' </listaAssuntos>'
+      #9'</modulo>'
+      #9'<modulo>'
+      #9#9' <nome>F'#233'rias</nome>'
+      #9#9' <listaAssuntos>'
+      #9#9#9' <assunto>'
+      #9#9#9#9'<desc>Administra'#231#227'o de F'#233'rias</desc>'
+      #9#9#9#9'<informacoes>'
+      #9#9#9#9'  <info>'
+      #9#9#9#9'    <duvida>Como Cadastrar F'#233'rias ?</duvida> '
+      
+        '    '#9#9#9'    <solucao>No Menu GERENCIAMENTO B'#193'SICO DE RH no 3'#176' men' +
+        'u PAR'#194'METROS DE CONTRATA'#199#195'O selecione o menu F'#233'rias e depois MAN' +
+        'UTEN'#199#195'O DE F'#201'RIAS</solucao>'#9
+      #9#9#9#9'  </info>'
+      #9#9#9#9'</informacoes>'#9#9#9
+      #9#9#9' </assunto>'
+      #9#9' </listaAssuntos>'
+      #9'</modulo>'
+      '</chatbot>')
+    Left = 344
+    Top = 96
+    DOMVendorDesc = 'MSXML'
+  end
+end

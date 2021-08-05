@@ -1,0 +1,25 @@
+program prjChatBot;
+
+uses
+  Forms,
+  frmChatBot in 'frmChatBot.pas' {Form1},
+  ysfm0500 in 'ysfm0500.pas' {fmYsfm0500},
+  frmMenu in 'frmMenu.pas' {Form2},
+  FPROCESSO in 'FPROCESSO.pas' {frmProcesso},
+  FASSUNTO in 'FASSUNTO.pas' {frmAssunto},
+  FSOLUCOES in 'FSOLUCOES.pas' {frmSolucoes},
+  FCONSULTA in 'FCONSULTA.pas' {frmConsulta};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmProcesso, frmProcesso);
+  Application.CreateForm(TfrmAssunto, frmAssunto);
+  Application.CreateForm(TfrmSolucoes, frmSolucoes);
+  Application.CreateForm(TfrmConsulta, frmConsulta);
+  Application.Run;
+end.

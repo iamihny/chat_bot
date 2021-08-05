@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/01/26 14:53:33.106.pas,C:\Users\Vinicius\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\Vinicius\Desktop\CHATBOT\frmChatBot.pas</Transaction>
+    <Transaction>2021/01/26 14:53:33.106.dfm,C:\Users\Vinicius\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\Vinicius\Desktop\CHATBOT\frmChatBot.dfm</Transaction>
+    <Transaction>2021/01/26 14:53:45.344.dproj,C:\Users\Vinicius\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Vinicius\Desktop\CHATBOT\prjChatBot.dproj</Transaction>
+    <Transaction>2021/01/26 15:04:21.321.pas,C:\Users\Vinicius\Desktop\CHATBOT\Ysfm1000.pas=</Transaction>
+    <Transaction>2021/01/26 15:04:21.321.dfm,C:\Users\Vinicius\Desktop\CHATBOT\Ysfm1000.dfm=</Transaction>
+    <Transaction>2021/04/20 14:09:00.196.pas,C:\Users\Vinicius\Desktop\CHATBOT\Unit2.pas=C:\Users\Vinicius\Desktop\CHATBOT\frmMenu.pas</Transaction>
+    <Transaction>2021/04/20 14:09:00.196.dfm,C:\Users\Vinicius\Desktop\CHATBOT\Unit2.dfm=C:\Users\Vinicius\Desktop\CHATBOT\frmMenu.dfm</Transaction>
+    <Transaction>2021/04/20 15:21:40.342.pas,C:\Users\Vinicius\Desktop\CHATBOT\Unit3.pas=C:\Users\Vinicius\Desktop\CHATBOT\FPROCESSO.pas</Transaction>
+    <Transaction>2021/04/20 15:21:40.342.dfm,C:\Users\Vinicius\Desktop\CHATBOT\Unit3.dfm=C:\Users\Vinicius\Desktop\CHATBOT\FPROCESSO.dfm</Transaction>
+    <Transaction>2021/04/20 16:35:47.218.pas,C:\Users\Vinicius\Desktop\CHATBOT\Unit3.pas=C:\Users\Vinicius\Desktop\CHATBOT\FASSUNTO.pas</Transaction>
+    <Transaction>2021/04/20 16:35:47.218.dfm,C:\Users\Vinicius\Desktop\CHATBOT\Unit3.dfm=C:\Users\Vinicius\Desktop\CHATBOT\FASSUNTO.dfm</Transaction>
+    <Transaction>2021/04/22 10:00:27.867.pas,C:\Users\Vinicius\Desktop\CHATBOT\Unit3.pas=C:\Users\Vinicius\Desktop\CHATBOT\FSOLUCOES.pas</Transaction>
+    <Transaction>2021/04/22 10:00:27.867.dfm,C:\Users\Vinicius\Desktop\CHATBOT\Unit3.dfm=C:\Users\Vinicius\Desktop\CHATBOT\FSOLUCOES.dfm</Transaction>
+    <Transaction>2021/04/22 14:14:39.645.pas,C:\Users\Vinicius\Desktop\CHATBOT\Unit3.pas=C:\Users\Vinicius\Desktop\CHATBOT\FCONSULTA.pas</Transaction>
+    <Transaction>2021/04/22 14:14:39.645.dfm,C:\Users\Vinicius\Desktop\CHATBOT\Unit3.dfm=C:\Users\Vinicius\Desktop\CHATBOT\FCONSULTA.dfm</Transaction>
+    <Transaction>2021/06/22 15:33:03.134.pas,C:\Users\Vinicius\Desktop\CHATBOT\Unit3.pas=C:\Users\Vinicius\Desktop\CHATBOT\FDOCUMENTO.pas</Transaction>
+    <Transaction>2021/06/22 15:33:03.135.dfm,C:\Users\Vinicius\Desktop\CHATBOT\Unit3.dfm=C:\Users\Vinicius\Desktop\CHATBOT\FDOCUMENTO.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

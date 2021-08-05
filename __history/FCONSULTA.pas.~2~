@@ -1,0 +1,71 @@
+unit FCONSULTA;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator,
+  DB, cxDBData, MemDS, DBAccess, Ora, cxGridLevel, cxClasses, cxGridCustomView,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid;
+
+type
+  TfrmConsulta = class(TForm)
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    qryProcesso: TOraQuery;
+    qryProcessoCOD_PROCESSO: TFloatField;
+    qryProcessoPROCESSO: TStringField;
+    qryProcessoORDEM: TFloatField;
+    dsProcesso: TOraDataSource;
+    cxGrid1DBTableView1COD_PROCESSO: TcxGridDBColumn;
+    cxGrid1DBTableView1PROCESSO: TcxGridDBColumn;
+    cxGrid1Level2: TcxGridLevel;
+    qryAssunto: TOraQuery;
+    dsAssunto: TOraDataSource;
+    qryAssuntoCOD_PROCESSO: TFloatField;
+    qryAssuntoCOD_ASSUNTO: TFloatField;
+    qryAssuntoASSUNTO: TStringField;
+    qryAssuntoORDEM: TFloatField;
+    cxGrid1DBTableView2: TcxGridDBTableView;
+    cxGrid1DBTableView2COD_ASSUNTO: TcxGridDBColumn;
+    cxGrid1DBTableView2ASSUNTO: TcxGridDBColumn;
+    cxGrid1Level3: TcxGridLevel;
+    qrySolucoes: TOraQuery;
+    qrySolucoesCOD_PROCESSO: TFloatField;
+    qrySolucoesCOD_ASSUNTO: TFloatField;
+    qrySolucoesCOD_SOLUCAO: TFloatField;
+    qrySolucoesDUVIDA: TStringField;
+    qrySolucoesSOLUCAO: TStringField;
+    qrySolucoesORDEM: TFloatField;
+    dsSolucoes: TOraDataSource;
+    cxGrid1DBTableView3: TcxGridDBTableView;
+    cxGrid1DBTableView3COD_PROCESSO: TcxGridDBColumn;
+    cxGrid1DBTableView3COD_ASSUNTO: TcxGridDBColumn;
+    cxGrid1DBTableView3COD_SOLUCAO: TcxGridDBColumn;
+    cxGrid1DBTableView3DUVIDA: TcxGridDBColumn;
+    cxGrid1DBTableView3SOLUCAO: TcxGridDBColumn;
+    cxGrid1DBTableView3ORDEM: TcxGridDBColumn;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmConsulta: TfrmConsulta;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmConsulta.FormShow(Sender: TObject);
+begin
+  qryProcesso.open;
+  qryAssunto.open;
+  qrySolucoes.Open;
+end;
+
+end.

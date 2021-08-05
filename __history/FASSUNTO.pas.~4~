@@ -1,0 +1,76 @@
+unit FASSUNTO;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Menus, Grids,
+  DBGrids, DBSBtncx, StdCtrls, cxButtons, Mask, DBCtrls, ExtCtrls, DB, MemDS,
+  DBAccess, Ora;
+
+type
+  TfrmAssunto = class(TForm)
+    dsAssunto: TOraDataSource;
+    qryAssunto: TOraQuery;
+    qryCodigo: TOraQuery;
+    Panel2: TPanel;
+    Panel1: TPanel;
+    Label2: TLabel;
+    Label1: TLabel;
+    edAssunto: TDBEdit;
+    PEdicao: TPanel;
+    sbRefresh: TcxButton;
+    dbsbInsert: TDBcxSpeedButton;
+    dbsbDelete: TDBcxSpeedButton;
+    dbsbEdit: TDBcxSpeedButton;
+    dbsbPost: TDBcxSpeedButton;
+    dbsbCancel: TDBcxSpeedButton;
+    DBEdit2: TDBEdit;
+    pGrid: TPanel;
+    gProcesso: TDBGrid;
+    qryCodigoCOD_SUB_ASSUNTO: TFloatField;
+    qryCodigoORDEM: TFloatField;
+    qryAssuntoCOD_SUB_ASSUNTO: TFloatField;
+    qryAssuntoSUB_ASSUNTO: TStringField;
+    qryAssuntoCOD_ASSUNTO: TFloatField;
+    qryAssuntoORDEM: TFloatField;
+    procedure FormShow(Sender: TObject);
+    procedure qryAssuntoBeforePost(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmAssunto: TfrmAssunto;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmAssunto.FormShow(Sender: TObject);
+begin
+  qryAssunto.Open;
+end;
+
+procedure TfrmAssunto.qryAssuntoBeforePost(DataSet: TDataSet);
+begin
+   if trim(qryAssuntoSUB_ASSUNTO.AsString) = '' then
+      begin
+      showMessage('Assunto deve ser Informado!');
+      edAssunto.SetFocus;
+      abort;
+      end;
+
+
+
+  qryCodigo.Close;
+  qryCodigo.Open;
+  qryAssuntoCOD_SUB_ASSUNTO.value := qryCodigo.FieldByName('COD_SUB_ASSUNTO').Value;
+  qryAssuntoORDEM.value := qryCodigo.FieldByName('ORDEM').Value;
+  qryCodigo.Close;
+  edAssunto.SetFocus;
+end;
+
+end.

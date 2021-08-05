@@ -1,0 +1,42 @@
+unit FCONSULTA;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  cxStyles, cxCustomData, cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator,
+  DB, cxDBData, MemDS, DBAccess, Ora, cxGridLevel, cxClasses, cxGridCustomView,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, cxGrid, Mask,
+  rxToolEdit, StdCtrls, ExtCtrls;
+
+type
+  TfrmConsulta = class(TForm)
+    Panel4: TPanel;
+    Label3: TLabel;
+    Label15: TLabel;
+    edProcesso: TEdit;
+    ceProcesso: TComboEdit;
+    edAssunto: TEdit;
+    ceAssunto: TComboEdit;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+     FHandlePai  : THandle;
+  end;
+
+var
+  frmConsulta: TfrmConsulta;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmConsulta.FormShow(Sender: TObject);
+begin
+  Windows.SetParent(self.Handle,FHandlePai);
+end;
+
+end.
